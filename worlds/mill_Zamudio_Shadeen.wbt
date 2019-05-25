@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.19680149892644924 -0.9746514280955045 -0.10641317461525462 1.0130052366014526
-  position -3.282016135279366 1.3873323728203402 2.8727961735231116
+  orientation -0.17858066560512556 -0.9757814841333737 -0.1263306815247207 1.2545809805715857
+  position -4.001310595941024 1.8372050212669275 2.104004298553909
 }
 TexturedBackground {
 }
@@ -112,6 +112,17 @@ DEF MILL_RED_SOLID1 Solid {
             }
           ]
         }
+        DEF S_BOX_UP Transform {
+          translation -0.5 0.975 0
+          children [
+            Shape {
+              appearance USE PURPLE
+              geometry Box {
+                size 0.01 0.05 1
+              }
+            }
+          ]
+        }
       ]
     }
   ]
@@ -127,8 +138,8 @@ DEF MILL_BLUE_SOLID2 Solid {
           translation -0.5 0.025 0
           children [
             Shape {
-              appearance DEF S_BOX4 PBRAppearance {
-                baseColor 0.6431372549019608 0 0
+              appearance DEF S_ORANGE PBRAppearance {
+                baseColor 0.7686274509803922 0.6274509803921569 0
               }
               geometry Box {
                 size 0.01 0.05 1
@@ -140,7 +151,7 @@ DEF MILL_BLUE_SOLID2 Solid {
           translation -0.5 0.1 0
           children [
             Shape {
-              appearance DEF S_BOX5 PBRAppearance {
+              appearance DEF S_BLACK PBRAppearance {
                 baseColor 0 0 0
               }
               geometry Box {
@@ -153,7 +164,7 @@ DEF MILL_BLUE_SOLID2 Solid {
           translation -0.5 0.9 0
           children [
             Shape {
-              appearance USE S_BOX5
+              appearance USE S_BLACK
               geometry Box {
                 size 0.01 0.1 1
               }
@@ -179,7 +190,7 @@ DEF MILL_BLUE_SOLID2 Solid {
           rotation 1 0 0 1.57
           children [
             Shape {
-              appearance USE S_BOX5
+              appearance USE S_BLACK
               geometry Box {
                 size 0.01 0.1 0.7
               }
@@ -191,7 +202,7 @@ DEF MILL_BLUE_SOLID2 Solid {
           rotation 1 0 0 1.57
           children [
             Shape {
-              appearance USE S_BOX5
+              appearance USE S_BLACK
               geometry Box {
                 size 0.01 0.1 0.7
               }
@@ -203,7 +214,7 @@ DEF MILL_BLUE_SOLID2 Solid {
           rotation 1 0 0 0.78
           children [
             Shape {
-              appearance USE S_BOX5
+              appearance USE S_BLACK
               geometry Box {
                 size 0.01 0.07 1.2
               }
@@ -215,7 +226,7 @@ DEF MILL_BLUE_SOLID2 Solid {
           rotation 1 0 0 -0.78
           children [
             Shape {
-              appearance USE S_BOX5
+              appearance USE S_BLACK
               geometry Box {
                 size 0.01 0.07 1.2
               }
@@ -234,5 +245,31 @@ DEF MILL_BLUE Solid {
   ]
 }
 DEF MILL_RED Solid {
+  translation 0 0 -1
+  rotation 0 1 0 1.57
+  children [
+    USE GR_OBJECT_1
+  ]
   name "solid(3)"
+}
+DEF BASE_1 Solid {
+  children [
+    Shape {
+      geometry Box {
+        size 1 0.01 1
+      }
+    }
+  ]
+  name "solid(1)"
+}
+DEF BASE_2 Solid {
+  translation 0 1 0
+  children [
+    Shape {
+      geometry Box {
+        size 1 0.01 1
+      }
+    }
+  ]
+  name "solid(5)"
 }
