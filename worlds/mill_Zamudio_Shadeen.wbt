@@ -330,15 +330,45 @@ DEF BASE_2 Solid {
                                         radius 0.05
                                       }
                                     }
+                                    HingeJoint {
+                                      jointParameters HingeJointParameters {
+                                        axis 0 1 0
+                                        anchor 0 -0.5 0
+                                      }
+                                      endPoint Solid {
+                                        children [
+                                          Transform {
+                                            translation 0 0.5 0
+                                            children [
+                                              Shape {
+                                                geometry Box {
+                                                  size 1 0.01 0.1
+                                                }
+                                              }
+                                            ]
+                                          }
+                                          Transform {
+                                            translation 0 0.5 0
+                                            rotation 0 1 0 1.57
+                                            children [
+                                              Shape {
+                                                geometry Box {
+                                                  size 1 0.01 0.1
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                        physics Physics {
+                                        }
+                                      }
+                                    }
                                   ]
                                   physics Physics {
                                   }
                                 }
                               }
                             ]
-                          }
-                          DEF WINDS_1 Transform {
-                            translation 0 0.5 0
                           }
                         ]
                       }
