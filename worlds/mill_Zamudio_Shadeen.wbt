@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.17858066560512556 -0.9757814841333737 -0.1263306815247207 1.2545809805715857
-  position -4.001310595941024 1.8372050212669275 2.104004298553909
+  orientation -0.1549347829791843 -0.9810401995450333 -0.11642740184266949 1.30730476562405
+  position -4.072288423857822 2.2361967014676667 2.2547762293949623
 }
 TexturedBackground {
 }
@@ -268,6 +268,82 @@ DEF BASE_2 Solid {
     Shape {
       geometry Box {
         size 1 0.01 1
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+      }
+      endPoint Solid {
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.12549019607843137 0.2901960784313726 0.5294117647058824
+            }
+            geometry Box {
+              size 0.3 0.5 0.3
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+            }
+            endPoint Solid {
+              translation 0 0.5 0
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 0 0
+                  }
+                  geometry Cylinder {
+                    height 0.5
+                    radius 0.05
+                  }
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                  }
+                  endPoint Solid {
+                    translation 0 0.3 0
+                    rotation 1 0 0 1.57
+                    children [
+                      Group {
+                        children [
+                          DEF Y_Axis_CYL Transform {
+                            children [
+                              HingeJoint {
+                                jointParameters HingeJointParameters {
+                                  axis 0 1 0
+                                  anchor 0 0.6 0
+                                  staticFriction 0.02
+                                }
+                                endPoint Solid {
+                                  children [
+                                    Shape {
+                                      appearance PBRAppearance {
+                                      }
+                                      geometry Cylinder {
+                                        height 1
+                                        radius 0.05
+                                      }
+                                    }
+                                  ]
+                                  physics Physics {
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                          DEF WINDS_1 Transform {
+                            translation 0 0.5 0
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ]
