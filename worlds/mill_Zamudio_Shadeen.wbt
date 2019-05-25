@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.1549347829791843 -0.9810401995450333 -0.11642740184266949 1.30730476562405
-  position -4.072288423857822 2.2361967014676667 2.2547762293949623
+  orientation -0.190794400926891 -0.9708807162040816 -0.14487281138294514 1.3274458034934014
+  position -4.059523035908499 2.5003375846751896 2.2053946727260123
 }
 TexturedBackground {
 }
@@ -300,6 +300,8 @@ DEF BASE_2 Solid {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
+                    axis 0 1 0
+                    staticFriction 0.02
                   }
                   endPoint Solid {
                     translation 0 0.3 0
@@ -308,14 +310,17 @@ DEF BASE_2 Solid {
                       Group {
                         children [
                           DEF Y_Axis_CYL Transform {
+                            translation 0 0.5 0
+                            rotation 1 0 0 0
                             children [
                               HingeJoint {
                                 jointParameters HingeJointParameters {
-                                  axis 0 1 0
-                                  anchor 0 0.6 0
+                                  axis 0 0 1
+                                  anchor 0 -0.5 0
                                   staticFriction 0.02
                                 }
                                 endPoint Solid {
+                                  rotation 0 0 1 0
                                   children [
                                     Shape {
                                       appearance PBRAppearance {
